@@ -1,13 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 100vh;
   width: 100%;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 export const Form = styled.form`
   background-color: ${({ theme }) => theme.COLORS.GRAY_800};
@@ -15,7 +15,7 @@ export const Form = styled.form`
   border-radius: 7px;
 
   min-width: 370px;
-  
+
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -35,5 +35,4 @@ export const Form = styled.form`
     align-items: center;
     gap: 7px;
   }
-  
-`;
+`

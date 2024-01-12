@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const Container = styled(Link)`
   width: 200px;
@@ -9,11 +9,10 @@ export const Container = styled(Link)`
   color: ${({ theme }) => theme.COLORS.WHITE};
   border-radius: 7px;
   overflow: hidden;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 
   > svg {
     flex: 1;
@@ -27,4 +26,4 @@ export const Container = styled(Link)`
     text-align: center;
     font-weight: 700;
   }
-`;
+`
