@@ -1,9 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 
+import { useAuth } from '../../hooks/auth'
+import { USER_ROLE } from '../../utils/rules'
+
 import { Container, Header, Item } from './styles'
 import { Button } from '../../components/Button'
 
 export function Product() {
+  const { user } = useAuth()
   const navigate = useNavigate()
 
   const products = Array(20)
@@ -16,7 +20,9 @@ export function Product() {
         <h1>Produtos</h1>
 
         <nav>
-          <Button title='Cadastrar' />
+          {[USER_ROLE.ADMIN, USER_ROLE.SELLER].includes(user.role) && (
+            <Button title='Cadastrar' />
+          )}
           <Button
             title='Voltar'
             onClick={() => navigate('/')}

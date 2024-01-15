@@ -21,7 +21,7 @@ export function Home() {
           to='/product'
         />
 
-        {[USER_ROLE.ADMIN] && (
+        {[USER_ROLE.ADMIN].includes(user.role) && (
           <Feature
             title='Fornecedores'
             icon={FiTruck}
