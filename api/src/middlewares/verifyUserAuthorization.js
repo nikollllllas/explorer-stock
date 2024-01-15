@@ -12,4 +12,4 @@ function verifyUserAuthorization(roleToVerify) {
   }
 }
 
-module.expots = verifyUserAuthorization
+module.exports = verifyUserAuthorization
