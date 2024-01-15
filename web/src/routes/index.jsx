@@ -7,9 +7,23 @@ import { AuthRoutes } from './auth.routes'
 import { AdminRoutes } from './admin.routes'
 import { SellerRoutes } from './seller.routes'
 import { CustomerRoutes } from './customer.routes'
+import { useEffect } from 'react'
+import { api } from '../services/api'
 
 export function Routes() {
   const { user } = useAuth()
+
+  useEffect(() => {
+    api.get('/users/validated').catch((e) => {
+      console.log(e)
+    })
+
+    if (user) {
+      setData({
+        user: JSON.parse(user)
+      })
+    }
+  }, [])
 
   function AcessRoute() {
     switch (user.role) {
