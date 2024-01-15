@@ -5,7 +5,7 @@ import { Product } from '../pages/Product'
 import { NotFound } from '../pages/NotFound'
 import { SalesReport } from '../pages/SalesReport'
 
-export function AdminRoutes() {
+export function SellerRoutes() {
   return (
     <Routes>
       <Route
