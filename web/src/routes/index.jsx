@@ -11,18 +11,14 @@ import { useEffect } from 'react'
 import { api } from '../services/api'
 
 export function Routes() {
-  const { user } = useAuth()
+  const { user, signOut } = useAuth()
 
   useEffect(() => {
-    api.get('/users/validated').catch((e) => {
-      console.log(e)
+    api.get('/users/validated').catch((error) => {
+      if (error.response.status === 401) {
+        signOut()
+      }
     })
-
-    if (user) {
-      setData({
-        user: JSON.parse(user)
-      })
-    }
   }, [])
 
   function AcessRoute() {
